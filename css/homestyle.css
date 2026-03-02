@@ -1,0 +1,437 @@
+/* ==================================================
+   VARIÁVEIS
+================================================== */
+:root {
+  --black: #0b0b0b;
+  --dark: #111;
+  --card: #151515;
+  --border: #222;
+  --yellow: #ffb700;
+  --yellow-strong: #ffc933;
+  --text: #ffffff;
+  --muted: #cfcfcf;
+}
+
+/* ==================================================
+   RESET
+================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: var(--black);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ==================================================
+   LAYOUT GERAL
+================================================== */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================================================
+   HEADER
+================================================== */
+.header {
+  background: linear-gradient(180deg, #050505, #0b0b0b);
+  padding: 50px 20px 30px;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ==================================================
+   LOGO
+================================================== */
+.logo {
+  margin-bottom: 30px;
+}
+
+.logo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 3.4rem;
+  font-weight: 800;
+}
+
+.logo-text .eletro {
+  color: #fff;
+}
+
+.logo-text .faz,
+.logo-text .raio {
+  color: var(--yellow);
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: #bdbdbd;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+/* ==================================================
+   MENU
+================================================== */
+.nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 42px;
+  list-style: none;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--yellow);
+  transition: 0.3s;
+}
+
+.nav a:hover::after,
+.nav a.active::after {
+  width: 100%;
+}
+
+/* ==================================================
+   HERO HOME
+================================================== */
+.hero {
+  max-width: 1000px;
+  margin: 100px auto 80px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--yellow);
+  margin-bottom: 28px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==================================================
+   SOBRE A EMPRESA
+================================================== */
+.about {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.about h2 {
+  color: var(--yellow);
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.about p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ==================================================
+   TÍTULOS DAS PÁGINAS
+================================================== */
+.section h2 {
+  text-align: center;
+  color: var(--yellow);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* ==================================================
+   CARDS GERAIS
+================================================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 36px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: linear-gradient(180deg, #181818, #101010);
+  padding: 32px 28px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  border-color: var(--yellow);
+  box-shadow: 0 20px 40px rgba(255,183,0,0.2);
+}
+
+.card h3 {
+  color: var(--yellow);
+  margin: 16px 0 12px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ==================================================
+   ÍCONES DOS CARDS
+================================================== */
+.service-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-strong));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 6px 16px rgba(255,183,0,0.3);
+}
+
+/* ==================================================
+   IMAGENS DE SERVIÇOS
+================================================== */
+.service-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 0 1px rgba(255,183,0,0.15),
+              0 12px 28px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover .service-img {
+  transform: scale(1.05);
+  box-shadow: inset 0 0 0 1px rgba(255,183,0,0.3),
+              0 18px 40px rgba(0,0,0,0.55);
+}
+
+/* ==================================================
+   CONTATO
+================================================== */
+.contact-page {
+  text-align: center;
+}
+
+.contact-intro {
+  max-width: 520px;
+  margin: 0 auto 60px;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+  margin-bottom: 60px;
+}
+
+.contact-card {
+  background: linear-gradient(180deg, #181818, #101010);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 34px 28px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(255,183,0,0.15);
+}
+
+.contact-icon {
+  font-size: 2.4rem;
+  margin-bottom: 18px;
+}
+
+.contact-card h3 {
+  color: var(--yellow);
+  margin-bottom: 12px;
+  font-size: 1.25rem;
+}
+
+.contact-card p {
+  color: var(--muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* ==================================================
+   BOTÕES
+================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 44px;
+  background: linear-gradient(135deg, var(--yellow), var(--yellow-strong));
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 14px 30px rgba(255,183,0,0.35);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(255,183,0,0.5);
+}
+
+/* WhatsApp */
+.btn.whatsapp {
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  box-shadow: 0 14px 30px rgba(37,211,102,0.35);
+}
+
+.btn.whatsapp:hover {
+  box-shadow: 0 20px 40px rgba(37,211,102,0.55);
+}
+
+.whatsapp-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 12px;
+  color: #000;
+  display: inline-block;
+}
+
+/* ==================================================
+   FOOTER
+================================================== */
+.footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 45px 20px;
+  text-align: center;
+  color: #9a9a9a;
+  font-size: 0.85rem;
+}
+
+/* ==================================================
+   RESPONSIVO
+================================================== */
+@media (max-width: 768px) {
+  .nav ul {
+    gap: 20px;
+  }
+  
+  .nav a {
+    font-size: 0.9rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .about h2 {
+    font-size: 1.9rem;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-text {
+    font-size: 2.6rem;
+  }
+
+  .hero, .about {
+    margin: 70px 20px 60px;
+  }
+
+  .service-img {
+    height: 160px;
+  }
+  
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.8rem;
+  }
+  
+  .cards {
+    gap: 24px;
+  }
+  
+  .card {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .logo-text {
+    font-size: 2.2rem;
+  }
+  
+  .section {
+    padding: 0 15px;
+  }
+}
